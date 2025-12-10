@@ -14,7 +14,6 @@ public class GreetingController {
     private final EveningService eveningService;
     private final AfternoonService afternoonService;
 
-    public GreetingController(GreetingService greetingService, MorningService morningService,EveningService eveningService) {
     public GreetingController(GreetingService greetingService, MorningService morningService,EveningService eveningService, AfternoonService afternoonService) {
         this.greetingService = greetingService;
         this.morningService = morningService;
