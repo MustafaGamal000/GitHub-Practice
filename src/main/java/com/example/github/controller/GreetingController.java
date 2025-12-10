@@ -1,5 +1,6 @@
 package com.example.github.controller;
 
+import com.example.github.service.AfternoonService;
 import com.example.github.service.EveningService;
 import com.example.github.service.GreetingService;
 import com.example.github.service.MorningService;
@@ -11,10 +12,12 @@ public class GreetingController {
     private final GreetingService greetingService;
     private final MorningService morningService;
     private final EveningService eveningService;
+    private final AfternoonService afternoonService;
 
-    public GreetingController(GreetingService greetingService, MorningService morningService,EveningService eveningService) {
+    public GreetingController(GreetingService greetingService, MorningService morningService,EveningService eveningService, AfternoonService afternoonService) {
         this.greetingService = greetingService;
         this.morningService = morningService;
+        this.afternoonService = afternoonService;
         this.eveningService = eveningService;
     }
     @GetMapping("/hello")
@@ -30,5 +33,10 @@ public class GreetingController {
     @GetMapping("/evening")
     public String evening() {
         return eveningService.sayGoodEvening();
+    }
+
+    @GetMapping("/afternoon")
+    public String afternoon() {
+        return afternoonService.sayGoodAfternoon();
     }
 }
